@@ -3,7 +3,7 @@ services:
   reverseproxy:
     build:
       context: ./udagram-reverseproxy
-    image: reverseproxy:v1
+    image: bettafish15/reverseproxy:v1
     ports:
         - 8080:8080
     restart: always
@@ -13,7 +13,7 @@ services:
   backend-user:
     build:
       context: ./udagram-api-user
-    image: udagram-api-user:v1
+    image: bettafish15/udagram-api-user:v1
     environment:
       POSTGRES_USERNAME: $POSTGRES_USERNAME
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD
@@ -27,7 +27,7 @@ services:
   backend-feed:
     build:
       context: ./udagram-api-feed
-    image: udagram-api-feed:v1
+    image: bettafish15/udagram-api-feed:v1
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -43,6 +43,6 @@ services:
   frontend:
     build:
       context: ./udagram-frontend
-    image: udagram-frontend:v1
+    image: bettafish15/udagram-frontend:v1
     ports:
       - "8100:80"
