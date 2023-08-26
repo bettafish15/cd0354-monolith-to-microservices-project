@@ -1,0 +1,15 @@
+language: bash
+
+services:
+  - docker
+
+script:
+  # Build the Docker image using docker-compose
+  - docker-compose build
+
+after_success:
+  # Log in to Docker Hub using the provided environment variables
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+  # Push the Docker image to Docker Hub
+  - docker-compose push
