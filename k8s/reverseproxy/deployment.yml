@@ -19,6 +19,13 @@ spec:
       - image: bettafish15/reverseproxy:v1
         name: reverse-proxy
         imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "250Mi"
+            cpu: "500m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
         ports:
         - containerPort: 8080
       restartPolicy: Always

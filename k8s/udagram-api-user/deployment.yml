@@ -19,6 +19,13 @@ spec:
         - image: bettafish15/udagram-api-user:v1
           name: backend-user
           imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "250Mi"
+              cpu: "500m"
+            limits:
+              memory: "1024Mi"
+              cpu: "500m"
           env:
             - name: URL
               valueFrom:
