@@ -43,6 +43,6 @@ services:
   frontend:
     build:
       context: ./udagram-frontend
-    image: bettafish15/udagram-frontend:v2
+    image: bettafish15/udagram-frontend:v3
     ports:
       - "8100:80"
